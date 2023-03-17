@@ -35,15 +35,16 @@ useEffect(() => {
 }, [])
 
   
-
+  console.log(posts)
   return (
-    <div className="App">
-      <h1>Posts</h1>
+    <div className="App" style={{backgroundColor:'#b1dbfe'}}>
+      <h1 style={{color:'#001e39'}}>Posts</h1>
       <div style={{
         display:'flex',
+        flexGrow: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        flexDirection:'row'
+        
         
       }}>
         <div>
@@ -54,17 +55,36 @@ useEffect(() => {
                 onClick={event=> {toggleModal(event,post.id);setCount(post.id-1)}}
                 className="card-container"
                 style={{
-                  width: "30%",
+                  backgroundColor:'#003a6c',
+                  width: "50%",
                   border: "solid 3px #d3d3d3",
-                  margin: "10px auto"
+                  margin: "10px auto",
+                  
+                  
                 }}
               >
-                <h3>
+                <div style={{backgroundColor:'#003a6c',margin:'10px auto'}}>
+                <h2 style={{color:'white'}}>
                   <strong>{post.title}</strong>
-                </h3>
-                <p>{post.body}</p>
+                </h2>
+                </div>
+                
+                <p style={{
+                  fontSize:'20px',
+                  color:'#f2f9ff',
+                  margin:'10px '
+                }}>{post.body}</p>
 
-                <button onClick={event=> {toggleModal(event,post.id);setCount(post.id-1)}}>Click Me</button>
+                <button style={{
+                  fontSize:'20px',
+                  backgroundColor:'#00539b',
+                  color:'white',
+                  margin:'10px auto',
+                  padding:'5px',
+                  border: "solid 3px #f2f9ff",
+                  
+                }} onClick={event=> {toggleModal(event,post.id);setCount(post.id-1)}}>Click Me</button>
+                <h3></h3>
               </div>
             ))
           }    
