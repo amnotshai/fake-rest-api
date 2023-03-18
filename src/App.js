@@ -59,12 +59,13 @@ useEffect(() => {
                   width: "50%",
                   border: "solid 3px #d3d3d3",
                   margin: "10px auto",
+                  padding:'10px'
                   
                   
                 }}
               >
-                <div style={{backgroundColor:'#003a6c',margin:'10px auto'}}>
-                <h2 style={{color:'white'}}>
+                <div style={{backgroundColor:'#003a6c', padding:'15px'}}>
+                <h2 style={{color:'white', textAlign:'start'}}>
                   <strong>{post.title}</strong>
                 </h2>
                 </div>
@@ -72,18 +73,26 @@ useEffect(() => {
                 <p style={{
                   fontSize:'20px',
                   color:'#f2f9ff',
-                  margin:'10px '
+                  margin:'10px ',
+                  textAlign:'justify',
+                  textJustify:'inter-word'
                 }}>{post.body}</p>
+                
+                  <button style={{
+                    
+                    fontSize:'20px',
+                    width:'20%',
+                    backgroundColor:'#00539b',
+                    color:'white',
+                    margin:'10px auto',
+                    padding:'5px',
+                    border: "solid 3px #f2f9ff",
+                    
+                  }} onClick={event=> {toggleModal(event,post.id);setCount(post.id-1)}}>Click Me</button>
 
-                <button style={{
-                  fontSize:'20px',
-                  backgroundColor:'#00539b',
-                  color:'white',
-                  margin:'10px auto',
-                  padding:'5px',
-                  border: "solid 3px #f2f9ff",
-                  
-                }} onClick={event=> {toggleModal(event,post.id);setCount(post.id-1)}}>Click Me</button>
+                
+
+                
                 <h3></h3>
               </div>
             ))
